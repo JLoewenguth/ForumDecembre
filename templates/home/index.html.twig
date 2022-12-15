@@ -14,7 +14,7 @@
 
     {% for categorie in categories %}
         <tr><td>
-            <a href="(path{{ categorie.id }})">{{ categorie.nomCategorie }}</a></br>
+            <a href="{{ path('app_categorie', {'id':categorie.id}) }}">{{ categorie.nomCategorie }}</a></br>
         </td></tr>
     {% endfor %}
 {% endblock %}

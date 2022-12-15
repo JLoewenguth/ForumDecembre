@@ -13,7 +13,7 @@ class SujetController extends AbstractController
     #[Route('/sujet', name: 'app_sujet')]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $sujets = $doctrine->getRepository(Sujet::class)->findAll();
+        $sujets = $doctrine->getRepository(Sujet::class)->findBy(['id'=>'sujetId'],[]);
         return $this->render('sujet/index.html.twig', [
             'sujets'=> $sujets
         ]);

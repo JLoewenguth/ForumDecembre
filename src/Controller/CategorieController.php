@@ -14,7 +14,7 @@ class CategorieController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $sujets =
-        $doctrine->getRepository(Sujet::class)->findBy(['categorie_id' => '1'],[]);
+    $doctrine->getRepository(Sujet::class)->findBy([/*idcategorie*/],["dateCreation"=>"DESC"]);
         return $this->render('categorie/index.html.twig', [
             'sujets'=>$sujets
         ]);

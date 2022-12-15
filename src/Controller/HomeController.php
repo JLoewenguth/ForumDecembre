@@ -18,4 +18,13 @@ class HomeController extends AbstractController
             'categories'=> $categories
         ]);
     }
+
+    #[Route('/home', name: 'show_categorie')]
+    public function show(): Response
+    {
+        $categories = "";
+        return $this->render('categorie/show.html.twig', [
+            'categories'=> $categories
+        ]);
+    }
 }
