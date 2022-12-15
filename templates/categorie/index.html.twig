@@ -3,12 +3,18 @@
 {% block title %}nomCategorie {% endblock %}
 
 {% block body %}
-
-    <h1> titre categorie </h1>
+        <h1> nomCategorie </h1>
 
     {% for sujet in sujets %}
         <tr><td>
-            <a href="{{ path('app_sujet', {'id':sujet.id}) }}">{{ sujet.titre }}</a></br>
+            <a href="{{ path('app_sujet', {'id':sujet.id}) }}">{{ sujet.titre }}</a>
+            {% if sujet.ouvert =='0' %}
+                Fermé
+            {% endif %}
+            {% if sujet.resolu =='1' %}
+                Résolu !
+            {% endif %}
+            </br>
         </td></tr>
     {% endfor %}
 {% endblock %}

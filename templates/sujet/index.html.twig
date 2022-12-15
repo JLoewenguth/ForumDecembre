@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SujetController!{% endblock %}
+{% block title %}titre sujet{% endblock %}
 
 {% block body %}
 
@@ -8,6 +8,7 @@
 
     {% for sujet in sujets %}
         <tr><td>
+            {{ sujet.dateCreation | date('j M Y')}}</br></br>
             {{ sujet.post }}</br>
         </td></tr>
     {% endfor %}

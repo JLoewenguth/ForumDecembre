@@ -9,10 +9,12 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class RegistrationFormType extends AbstractType
 {
@@ -48,5 +50,19 @@ class RegistrationFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => User::class,
         ]);
+    }
+
+    public static function loadValidatorMetadata(ClassMetadata $classMetadata)
+    {
+        $classMetadata->addPropertyConstraint('password', new Assert\Length(
+            [
+                'min'=>8,
+                'max'=>250,
+                'minMessage'=>'Votre mot de passe est trop court.',
+                'maxMessage'=>'Votre mot de passe est trop long.',
+            ]
+        )
+        );
+
     }
 }
