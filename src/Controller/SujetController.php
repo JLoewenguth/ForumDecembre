@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Sujet;
+use App\Entity\Message;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,4 +19,12 @@ class SujetController extends AbstractController
             'sujets'=> $sujets
         ]);
     }
-}
+
+    #[Route('/sujet/message', name: 'app_message')]
+    public function show(Message $message): Response
+    {
+        return $this->render('sujet/index.html.twig', [
+            'message'=> $message
+        ]);
+    }
+} 

@@ -1,0 +1,99 @@
+table, th, td, tr {
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+    height: 34px;
+    border-spacing: 1cm 2em;
+  }
+
+/*tableau principal*/
+#tableMain tr td:first-child {
+    width: 310px;
+  }
+#tableMain tr td:nth-child(2) {
+    width: 150px;
+    text-align: center
+  }
+#tableMain tr td:nth-child(3) {
+    width: 150px;
+    text-align: center
+  }
+#tableMain tr td:nth-child(4) {
+    width: 110px;
+    text-align: center
+  }
+#tableMain tr td:last-child {
+    width: 220px;
+  }
+#tableMain tr:nth-child(even) {background-color: #f2f2f2;}
+
+/*tableaux personnes*/
+#tablePersonne tr td:first-child {
+    width: 250px;
+  }
+#tablePersonne tr td:nth-child(2) {
+    width: 150px;
+    text-align: center
+  }
+#tablePersonne tr td:nth-child(3) {
+    width: 150px;
+    text-align: center
+  }
+#tablePersonne tr td:last-child {
+    width: 220px;
+    text-align: center
+  }
+#tablePersonne tr:nth-child(even) {background-color: #f2f2f2;}
+
+  
+h1 {
+    color: rgb(66, 0, 0);
+    font-size: 2em;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+  }
+
+
+h3 {
+    color: rgb(119, 0, 0);
+    font-size: 1em;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+  }
+
+  
+/*#textPrincipal {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    }
+*/
+
+a {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    text-decoration: none;
+}
+
+#message {
+    color:rgb(50, 0, 0);
+    border: 1px solid;
+    background-color: lightcoral;
+ }
+
+ .success-msg{
+    background-color: green;
+    color: #f2f2f2;
+    width: 33%;
+ }
